@@ -1,3 +1,8 @@
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -8,6 +13,7 @@ body {
   left: 0;
   margin: 0 0 0 0;
   border-color: rgb(001,001,001);
+  overflow: hidden;
 }
 
 .white {

@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  if hex
-    body(style="background-color: ##{hex}")  
-  else 
-    body(style="background-color: rgb(#{color})")
-
-  ul
-    li hex: 
-      span #{hex} 
-    li rgb: 
-      span #{color} 
+  if sum < 300
+    -fontcolor = "white"
+  body(style="background-color: ##{hex}; color: #{fontcolor}")  
+    ul
+      li hex: 
+        span #{hex} 
+      li rgb: 
+        span #{rgb} 
+      li sum: 
+        span #{sum}

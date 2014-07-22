@@ -27,8 +27,8 @@ function caller(fn) {
  
 function changer() {
   document.body.style.backgroundColor = "rgb(" + set  + ")";
-  document.getElementsByTagName('span')[0] = set;
-  document.getElementsByTagName('span')[1] = toHex(set);
+  document.getElementsByTagName('span')[0].innerHtml = set;
+  document.getElementsByTagName('span')[1].innerHtml = toHex(set);
 }
 
 // var timer = setTimeout(function(){changer()}, 100);
@@ -39,8 +39,7 @@ document.onscroll = function(e){
     i++;
     if (i % 6 === 0) {
       changer();
+      history.pushState({},"", toHex(set));
     }
     set = randomSet();
 };
-
-history.pushState()

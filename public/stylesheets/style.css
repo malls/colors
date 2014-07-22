@@ -1,19 +1,16 @@
-html {
+html, body {
   height: 100%;
   overflow: hidden;
 }
 
 body {
-  height: 100%;
   width: 100%;
   font: 69px Helvetica, Arial, sans-serif;
   font-style: bold;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   margin: 0 0 0 0;
-  border-color: rgb(001,001,001);
-  overflow: hidden;
 }
 
 .white {
@@ -21,11 +18,9 @@ body {
 }
 
 div {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
 
 ul {

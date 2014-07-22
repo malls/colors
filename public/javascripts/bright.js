@@ -135,7 +135,7 @@ var names = { '191970': 'midnightblue',
 
 
 function random() {
-  return Math.floor(Math.random() * 256);
+  return Math.ceil(Math.random() * 257 - 1);
 }
 
 function randomSet () {
@@ -170,6 +170,19 @@ function changer(hex, rgb) {
   }
 }
 
+document.addEventListener("touchmove", function(e){
+    e.preventDefault();
+});
+
+function swap () {
+    i++;
+    if (i % 5 === 0) {
+      rgb = randomSet();
+      hex = toHex(rgb);
+      changer(hex, rgb);
+      history.pushState({hex: hex, rgb: rgb}, hex, hex);
+    }
+}
 
 window.onpopstate = function(e){
   hex = e.state.hex;
@@ -178,12 +191,28 @@ window.onpopstate = function(e){
   console.log(names[hex]);
 };
 
-document.onscroll = function(e){
-    i++;
-    if (i % 5 === 0) {
-      rgb = randomSet();
-      hex = toHex(rgb);
-      changer(hex, rgb);
-      history.pushState({hex: hex, rgb: rgb}, hex, hex);
-    }
+document.onmousewheel = function(e){
+    e.preventDefault();
+    swap();
 };
+
+document.onclick = function(e){
+    e.preventDefault();
+    rgb = randomSet();
+    hex = toHex(rgb);
+    changer(hex, rgb);
+    history.pushState({hex: hex, rgb: rgb}, hex, hex);
+};
+
+document.ontouchmove = function(e){
+    e.preventDefault();
+    swap();
+}
+
+document.ontouchstart = function(e){
+    e.preventDefault();
+    rgb = randomSet();
+    hex = toHex(rgb);
+    changer(hex, rgb);
+    history.pushState({hex: hex, rgb: rgb}, hex, hex);
+}

@@ -1,5 +1,5 @@
 function random() {
-  return Math.floor(Math.random() * 256);
+  return Math.ceil(Math.random() * 257 - 1);
 }
 
 function randomSet () {

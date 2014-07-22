@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  if hex
+    body(style="background-color: ##{color}")  
+  else 
+    body(style="background-color: rgb(#{color})")
+  
+  ul
+    li hex: #{color} 
+    li rgb: #{color} 
+    li name: #{color} 
+

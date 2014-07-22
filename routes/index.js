@@ -6,10 +6,12 @@ var router = express.Router();
 router
   .get('/', function(req, res) {
     var color = colors.randomSet();
-    res.render('index', { color: color });
+    var hex = colors.toHex(color);
+    console.log(hex);
+    res.render('index', { color: color, hex: hex });
   })
   .get('/:color', function(req, res) {
-    res.render('index', { color: req.params.color, hex: true });
+    res.render('index', { hex: req.params.color, color: "something" });
   });
 
 module.exports = router;

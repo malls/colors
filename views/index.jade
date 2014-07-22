@@ -2,12 +2,12 @@ extends layout
 
 block content
   if hex
-    body(style="background-color: ##{color}")  
+    body(style="background-color: ##{hex}")  
   else 
     body(style="background-color: rgb(#{color})")
-  
-  ul
-    li hex: #{color} 
-    li rgb: #{color} 
-    li name: #{color} 
 
+  ul
+    li hex: 
+      span #{hex} 
+    li rgb: 
+      span #{color} 

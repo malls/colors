@@ -13,6 +13,9 @@ router
   .get('/:color', function(req, res) {
     var rgb = colors.toRgb(req.params.color);
     var sum = colors.sum(rgb);
+    console.log('sum', sum);
+    console.log('rgb', rgb);
+
     res.render('index', { hex: req.params.color, rgb: rgb, sum: sum });
   });
 

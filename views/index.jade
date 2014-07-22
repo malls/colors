@@ -3,11 +3,10 @@ extends layout
 block content
   if sum < 300
     -fontcolor = "white"
-  body(style="background-color: ##{hex}; color: #{fontcolor}")  
-    ul
-      li hex: 
-        span #{hex} 
-      li rgb: 
-        span #{rgb} 
-      li sum: 
-        span #{sum}
+  body
+    div(style="background-color: ##{hex}; color: #{fontcolor}")  
+      ul
+        li
+          span ##{hex} 
+        li
+          span #{rgb} 

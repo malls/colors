@@ -25,7 +25,8 @@ function hexToNumber (hex) {
 }
 
 function toRgb (hex) {
-  return hexToNumber(hex[0] + hex[1]) + hexToNumber(hex[2] + hex[3]) + hexToNumber(hex[4] + hex[5]);
+  hex = hex.toString();
+  return [hexToNumber(hex[0] + hex[1]), hexToNumber(hex[2] + hex[3]), hexToNumber(hex[4] + hex[5])];
 }
 
 function sum (arr) {

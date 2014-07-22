@@ -1,5 +1,7 @@
+var set;
+
 function random() {
-  return Math.floor(Math.random() * 257 - 1);
+  return Math.floor(Math.random() * 256);
 }
 
 function randomSet () {
@@ -7,7 +9,12 @@ function randomSet () {
 }
 
 function numberToHex (number) {
-  return number.toString(16);
+  var hex = number.toString(16);
+  var str = hex + ""; 
+  if (str.length === 1){
+    return "0" + hex;
+  } 
+  return hex;
 }
 
 function hexToNumber (hex) {
@@ -19,16 +26,14 @@ function toHex (input) {
   return hex;
 }
 
-var set;
-
 function caller(fn) {
   return fn();
 }
  
 function changer() {
-  document.body.style.backgroundColor = "rgb(" + set  + ")";
-  document.getElementsByTagName('span')[0].innerHtml = set;
-  document.getElementsByTagName('span')[1].innerHtml = toHex(set);
+  document.getElementsByTagName('div')[0].style.backgroundColor = "rgb(" + set  + ")";
+  document.getElementsByTagName('span')[0].innerText = "#" + toHex(set);
+  document.getElementsByTagName('span')[1].innerText = set;
 }
 
 // var timer = setTimeout(function(){changer()}, 100);

@@ -170,10 +170,6 @@ function changer(hex, rgb) {
   }
 }
 
-document.addEventListener("touchmove", function(e){
-    e.preventDefault();
-});
-
 function swap () {
     i++;
     if (i % 5 === 0) {

@@ -172,7 +172,7 @@ function changer(hex, rgb) {
 
 function swap () {
     i++;
-    if (i % 5 === 0) {
+    if (i % 13 === 0) {
       rgb = randomSet();
       hex = toHex(rgb);
       changer(hex, rgb);

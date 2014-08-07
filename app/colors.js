@@ -34,7 +34,8 @@ function sum (arr) {
 }
 
 function complimentary (hex) {
-
+  hex = hex.toString;
+  return toHex();
 }
 
 module.exports = {
@@ -43,5 +44,6 @@ module.exports = {
   complimentary: complimentary,
   toRgb: toRgb,
   sum: sum,
+  complimentary: complimentary,
   toHex: toHex
 };

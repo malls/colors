@@ -133,6 +133,10 @@ var names = { '191970': 'midnightblue',
   '9ACD32': 'yellowgreen',
 };
 
+//delete or change
+function opposite(hex) {
+  return;
+}
 
 function random() {
   return Math.ceil(Math.random() * 257 - 1);
@@ -170,8 +174,8 @@ function changer(hex, rgb) {
   }
 }
 
-document.addEventListener("touchmove", function(e){
-    e.preventDefault();
+
+
 });
 
 function swap () {
@@ -216,3 +220,6 @@ document.ontouchstart = function(e){
     changer(hex, rgb);
     history.pushState({hex: hex, rgb: rgb}, hex, hex);
 }
+
+document.addEventListener("touchmove", function(e){
+    e.preventDefault();

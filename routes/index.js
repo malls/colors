@@ -11,6 +11,7 @@ router
     response.rgb = colors.randomSet();
     response.hex = colors.toHex(response.rgb);
     response.sum = colors.sum(response.rgb);
+    res.complimentary = colors.complimentary(response.rgb);
     if(names[response.hex]){
       response.name = names[response.hex];
     }
@@ -19,7 +20,7 @@ router
   .get('/:color', function(req, res) {
     var rgb = colors.toRgb(req.params.color);
     var sum = colors.sum(rgb);
-    res.render('index', { hex: req.params.color, rgb: rgb, sum: sum });
+    res.render('index', { hex: req.params.color, rgb: rgb, sum: sum, complimentary: complimentary });
   });
 
 module.exports = router;

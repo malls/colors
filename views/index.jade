@@ -1,8 +1,6 @@
 extends layout
 
 block content
-  if sum < 300
-    -fontcolor = "white"
   if !name
     -name = ''
   body
@@ -14,3 +12,4 @@ block content
           span #{rgb}
         li 
           span #{name}
+    div(style="background-color: ##{complimentary}; color: #{fontcolor}")

@@ -8,14 +8,15 @@ function randomSet () {
 
 function numberToHex (number) {
   var hex = number.toString(16);
-  var str = hex + ""; 
+  var str = hex + ''; 
   if (str.length === 1){
-    return "0" + hex;
+    return '0' + hex;
   } 
   return hex;
 }
 
 function toHex (num) {
+  if (!num) return;
   var hex = numberToHex(num[0]) + numberToHex(num[1]) + numberToHex(num[2]);
   return hex;
 }
@@ -44,6 +45,5 @@ module.exports = {
   complimentary: complimentary,
   toRgb: toRgb,
   sum: sum,
-  complimentary: complimentary,
   toHex: toHex
 };

@@ -1,8 +1,9 @@
 var rgb,
-    hex,
-    i = 0;
+  hex,
+  i = 0;
 
-var names = { '191970': 'midnightblue',
+var names = {
+  '191970': 'midnightblue',
   '696969': 'dimgray',
   '708090': 'slategray',
   '778899': 'lightslategray',
@@ -142,29 +143,29 @@ function random() {
   return Math.ceil(Math.random() * 257 - 1);
 }
 
-function randomSet () {
+function randomSet() {
   return [random(), random(), random()];
 }
 
-function numberToHex (number) {
+function numberToHex(number) {
   var hex = number.toString(16);
-  var str = hex + ''; 
-  if (str.length === 1){
+  var str = hex + '';
+  if (str.length === 1) {
     return '0' + hex;
-  } 
+  }
   return hex;
 }
 
-function toHex (input) {
+function toHex(input) {
   var hex = numberToHex(input[0]) + numberToHex(input[1]) + numberToHex(input[2]);
   return hex;
 }
- 
+
 function changer(hex, rgb) {
-  document.getElementsByTagName('div')[0].style.backgroundColor = 'rgb(' + rgb  + ')';
+  document.getElementsByTagName('div')[0].style.backgroundColor = 'rgb(' + rgb + ')';
   document.getElementsByTagName('span')[0].innerText = '#' + hex;
   document.getElementsByTagName('span')[1].innerText = rgb;
-  if (names[hex]){
+  if (names[hex]) {
     console.log("we got a name");
     console.log(hex);
     console.log(names[hex]);
@@ -174,52 +175,58 @@ function changer(hex, rgb) {
   }
 }
 
-
-
-});
-
-function swap () {
-    i++;
-    if (i % 5 === 0) {
-      rgb = randomSet();
-      hex = toHex(rgb);
-      changer(hex, rgb);
-      history.pushState({hex: hex, rgb: rgb}, hex, hex);
-    }
+function swap() {
+  i++;
+  if (i % 5 === 0) {
+    rgb = randomSet();
+    hex = toHex(rgb);
+    changer(hex, rgb);
+    history.pushState({
+      hex: hex,
+      rgb: rgb
+    }, hex, hex);
+  }
 }
 
-window.onpopstate = function(e){
+window.onpopstate = function(e) {
   hex = e.state.hex;
   rgb = e.state.rgb;
   changer(hex, rgb);
   console.log(names[hex]);
 };
 
-document.onmousewheel = function(e){
-    e.preventDefault();
-    swap();
+document.onmousewheel = function(e) {
+  e.preventDefault();
+  swap();
 };
 
-document.onclick = function(e){
-    e.preventDefault();
-    rgb = randomSet();
-    hex = toHex(rgb);
-    changer(hex, rgb);
-    history.pushState({hex: hex, rgb: rgb}, hex, hex);
+document.onclick = function(e) {
+  e.preventDefault();
+  rgb = randomSet();
+  hex = toHex(rgb);
+  changer(hex, rgb);
+  history.pushState({
+    hex: hex,
+    rgb: rgb
+  }, hex, hex);
 };
 
-document.ontouchmove = function(e){
-    e.preventDefault();
-    swap();
-}
+document.ontouchmove = function(e) {
+  e.preventDefault();
+  swap();
+};
 
-document.ontouchstart = function(e){
-    e.preventDefault();
-    rgb = randomSet();
-    hex = toHex(rgb);
-    changer(hex, rgb);
-    history.pushState({hex: hex, rgb: rgb}, hex, hex);
-}
+document.ontouchstart = function(e) {
+  e.preventDefault();
+  rgb = randomSet();
+  hex = toHex(rgb);
+  changer(hex, rgb);
+  history.pushState({
+    hex: hex,
+    rgb: rgb
+  }, hex, hex);
+};
 
-document.addEventListener("touchmove", function(e){
-    e.preventDefault();
+document.addEventListener("touchmove", function(e) {
+      e.preventDefault();
+});

@@ -1,4 +1,5 @@
-var colorHash = { '191970': 'midnightblue',
+var colorHash = {
+  '191970': 'midnightblue',
   '696969': 'dimgray',
   '708090': 'slategray',
   '778899': 'lightslategray',

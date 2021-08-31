@@ -8,9 +8,9 @@ function randomSet () {
 
 function numberToHex (number) {
   var hex = number.toString(16);
-  var str = hex + ""; 
-  if (str.length === 1){
-    return "0" + hex;
+  var str = hex + ''; 
+  if (str.length === 1) {
+    return '0' + hex;
   } 
   return hex;
 }
@@ -33,9 +33,7 @@ function sum (arr) {
   return arr[0] + arr[1] + arr[2];
 }
 
-function complimentary (hex) {
-
-}
+function complimentary (hex) {}
 
 module.exports = {
   random: random,
